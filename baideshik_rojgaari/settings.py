@@ -35,8 +35,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'rest_framework.authtoken',
     'django_apscheduler.apps.DjangoApschedulerConfig',
     'foreign_job.apps.ForeignJobConfig',
+    'app_user.apps.AppUserConfig',
     'jobs_updater.apps.JobsUpdaterConfig',
 ]
 
@@ -129,3 +132,15 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# For Email Functionality
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'amcbizprojects.co.in'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'noreply@amcbizprojects.co.in'
+EMAIL_HOST_PASSWORD = 'amctheblogger'
+EMAIL_USE_SSL = True
+DEFAULT_FROM_EMAIL = 'noreply@amcbizprojects.co.in'
+
+# Otp Expiration Time
+OTP_EXPIRY_TIME = 600
